@@ -1,4 +1,8 @@
-<p>cart-home works!</p>
+<h2>CATALOGO DE PRODUCTOS APP!</h2>
 <app-catalog [product]="product"></app-catalog>
-
-<app-cart></app-cart>
+<!--Si hay elementos en nuestro carros se muestra o si no muestra mensaje de error-->
+@if (items.length > 0) {
+<app-cart [items]="items"></app-cart>
+} @else {
+<div class="alert alert-warning">No hay elementos en el carro</div>
+}

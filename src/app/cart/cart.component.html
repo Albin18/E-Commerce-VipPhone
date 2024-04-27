@@ -1,1 +1,23 @@
 <h2>CART COMPONENT HTML!!!!</h2>
+
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>PRODUCTO</th>
+      <th>PRECIO</th>
+      <th>CANTIDAD</th>
+      <th>TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of items; track $index) {
+    <tr>
+      <td>{{ item.product.title }}</td>
+      <td>{{ item.product.id }}</td>
+      <td>{{ item.product.price }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.product.price * item.quantity }} TOTAL</td>
+    </tr>
+    }
+  </tbody>
+</table>
