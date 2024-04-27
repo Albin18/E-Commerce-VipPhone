@@ -11,18 +11,14 @@ import { ItemCart } from '../models/itemCart';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
-export class CartComponent implements OnInit {
+export class CartComponent  {
 
   product: Product[] = [];
 
   constructor(private service: ProductService) {
 
   }
-  ngOnInit(): void {
-      this.product = this.service.findAll();
 
-      //PARA OTRA CARPETA DE CART
-  }
   // el arreglo de objetos donde se almacenara los productos del carrito para la compra
      @Input() items: ItemCart[] = [];
 
