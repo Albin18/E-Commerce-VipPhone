@@ -10,7 +10,7 @@ export const productJSON : Product[] = [
       tipo: "tablet",
 
     },
-    price: 54.99
+    price: 54
   },
   {
     id:"producto-02",
@@ -30,7 +30,7 @@ export const productJSON : Product[] = [
       tipo: "Telefono",
 
     },
-    price: 54.99
+    price: 75
   },
   {
     id: "producto-04",
@@ -40,7 +40,7 @@ export const productJSON : Product[] = [
       tipo: "Telefono",
 
     },
-    price: 54.99
+    price: 99
   },
   {
     id: "producto-05",
@@ -50,7 +50,16 @@ export const productJSON : Product[] = [
       tipo: "Telefono",
 
     },
-    price: 54.99
+    price: 129
   },
+  {
+    id: "producto-06",
+    title: "TelefonoGame",
+    imagen: "/assets/image/Producto6.jpeg",
+    categoria: {
+      tipo: "Telefono",
 
+    },
+    price: 210
+  },
 ]

@@ -1,38 +1,6 @@
-.navbar{
-  position: relative;
-  width: 100%;
-  top: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 20px 10%;
-  }
-  .logo img{
-    padding: 0;
-    max-width: 130PX;
-    max-height: 100%;
-  }
-
-  .container-fluid a{
-    color:white ;
-    align-items: center;
-    font-size: 20px;
-    text-transform: capitalize;
-    padding: 10px 20px;
-    font-weight: 400;
-    transition: all .42s ease;
-  }
-  .navmenu a:hover{
-    color: rgb(255, 230, 0);
-  }
-
-  .nav-icon i:hover{
-    transform: scale(1.1);
-    color: rgb(255, 230, 0);
-  }
-  .collapse{
-   justify-content: center;
-  }
-  .collapse a:hover{
-    transform: scale(1.1);
-  color: rgb(255, 230, 0);
-  }
+.modal-content {
+  width: 1000px;
+  height: auto;
+  justify-content: center;
+  display: flex;
+}

@@ -1,30 +1,55 @@
 <app-header [items]="items" (openEventEmitter)="openCart()"></app-header>
-<div class="container my-2">
+<div class="container my-4">
   <h2>CATALOGO DE PRODUCTOS APP!</h2>
   <button class="btn btn-info btn-sm">cart</button>
-  <div class="row">
-    <div [className]="showCart ? 'col-9' : 'col'">
-      <app-catalog
-        [product]="product"
-        (productEventEmitter)="onAddCart($event)"
-      ></app-catalog>
+  <app-catalog
+    [product]="product"
+    (productEventEmitter)="onAddCart($event)"
+  ></app-catalog>
+
+  @if (showCart) {
+
+  <div class="abrir-modal animacion fadeIn">
+    <div class="modal" style="display: block" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content my-2">
+          <div class="modal-header">
+            <h5 class="modal-title">CARRO DE COMPRAS!!!!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="close"
+              (click)="openCart()"
+            ></button>
+          </div>
+          <div class="modal-body">
+            @if (items.length > 0) {
+
+            <app-cart
+              [items]="items"
+              [total]="total"
+              (idProductEventEmitter)="deleteCart($event)"
+            />
+            } @else {
+            <div class="alert alert-warning">No hay elementos en el carro</div>
+            }
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              (click)="openCart()"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    @if (showCart) {
-    <div class="col-3">
-      @if (items.length > 0) {
-      <app-cart
-        [items]="items"
-        [total]="total"
-        (idProductEventEmitter)="deleteCart($event)"
-      />
-      } @else {
-      <div class="alert alert-warning">No hay elementos en el carro</div>
-      }
-      <button class="btn btn-secondary float-end" (click)="openCart()">
-        close cart
-      </button>
-    </div>
-    }
   </div>
+
+  }
 </div>
 <!--Si hay elementos en nuestro carros se muestra o si no muestra mensaje de error-->
