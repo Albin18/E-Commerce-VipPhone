@@ -3,12 +3,12 @@ import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { CatalogComponent } from '../catalog/catalog.component';
 import { ItemCart } from '../models/itemCart';
-import { CartComponent } from '../cart/cart.component';
 import { HeaderComponent } from '../header/header.component';
+import { CartModalComponent } from '../cart-modal/cart-modal.component';
 @Component({
   selector: 'app-cart-home',
   standalone: true,
-  imports: [CatalogComponent, CartComponent, HeaderComponent],
+  imports: [CatalogComponent, HeaderComponent, CartModalComponent],
   templateUrl: './cart-home.component.html',
   styleUrl: './cart-home.component.css'
 })

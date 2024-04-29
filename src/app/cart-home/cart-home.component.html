@@ -9,46 +9,12 @@
 
   @if (showCart) {
 
-  <div class="abrir-modal animacion fadeIn">
-    <div class="modal" style="display: block" tabindex="-1">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content my-2">
-          <div class="modal-header">
-            <h5 class="modal-title">CARRO DE COMPRAS!!!!</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="close"
-              (click)="openCart()"
-            ></button>
-          </div>
-          <div class="modal-body">
-            @if (items.length > 0) {
-
-            <app-cart
-              [items]="items"
-              [total]="total"
-              (idProductEventEmitter)="deleteCart($event)"
-            />
-            } @else {
-            <div class="alert alert-warning">No hay elementos en el carro</div>
-            }
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-              (click)="openCart()"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-cart-modal
+    [items]="items"
+    [total]="total"
+    (idProductEventEmitter)="deleteCart($event)"
+    (openEventEmitter)="openCart()"
+  ></app-cart-modal>
 
   }
 </div>
