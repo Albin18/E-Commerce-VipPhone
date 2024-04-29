@@ -4,10 +4,11 @@ import { Product } from '../models/product';
 import { CatalogComponent } from '../catalog/catalog.component';
 import { ItemCart } from '../models/itemCart';
 import { CartComponent } from '../cart/cart.component';
+import { HeaderComponent } from '../header/header.component';
 @Component({
   selector: 'app-cart-home',
   standalone: true,
-  imports: [CatalogComponent, CartComponent],
+  imports: [CatalogComponent, CartComponent, HeaderComponent],
   templateUrl: './cart-home.component.html',
   styleUrl: './cart-home.component.css'
 })
@@ -19,12 +20,15 @@ export class CartHomeComponent implements OnInit {
 //price total
     total:number = 0;
 
+    showCart: boolean = false;
+
     constructor(private service: ProductService) {
 
     }
     ngOnInit(): void {
         this.product = this.service.findAll();
-        this.items = JSON.parse(sessionStorage.getItem('cart')!/*usamos el operador para determinar que no sea vacio*/ ) || [];
+        /*usamos el operador ( ! ) para determinar que no sea vacio*/
+        this.items = JSON.parse(sessionStorage.getItem('cart') || '[]');
         this.calculateTotal()
       }
 
@@ -64,6 +68,10 @@ export class CartHomeComponent implements OnInit {
 //Convertimos nuestro arreglo items en un string
      saveSession(): void{
       sessionStorage.setItem('cart', JSON.stringify(this.items))
+     }
+
+     openCart(): void {
+        this.showCart = !this.showCart;
      }
 
 }

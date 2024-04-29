@@ -1,22 +1,30 @@
-<h2>CATALOGO DE PRODUCTOS APP!</h2>
-<div class="row">
-  <div class="col-8">
-    <app-catalog
-      [product]="product"
-      (productEventEmitter)="onAddCart($event)"
-    ></app-catalog>
-  </div>
-  <div class="col-4">
-    @if (items.length > 0) {
-    <app-cart
-      [items]="items"
-      [total]="total"
-      (idProductEventEmitter)="deleteCart($event)"
-    />
-    } @else {
-    <div class="alert alert-warning">No hay elementos en el carro</div>
+<app-header [items]="items" (openEventEmitter)="openCart()"></app-header>
+<div class="container my-2">
+  <h2>CATALOGO DE PRODUCTOS APP!</h2>
+  <button class="btn btn-info btn-sm">cart</button>
+  <div class="row">
+    <div [className]="showCart ? 'col-9' : 'col'">
+      <app-catalog
+        [product]="product"
+        (productEventEmitter)="onAddCart($event)"
+      ></app-catalog>
+    </div>
+    @if (showCart) {
+    <div class="col-3">
+      @if (items.length > 0) {
+      <app-cart
+        [items]="items"
+        [total]="total"
+        (idProductEventEmitter)="deleteCart($event)"
+      />
+      } @else {
+      <div class="alert alert-warning">No hay elementos en el carro</div>
+      }
+      <button class="btn btn-secondary float-end" (click)="openCart()">
+        close cart
+      </button>
+    </div>
     }
   </div>
 </div>
-
 <!--Si hay elementos en nuestro carros se muestra o si no muestra mensaje de error-->

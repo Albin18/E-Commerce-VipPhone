@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg bg-black">
+  <div class="container-fluid">
+    <a class="logo"><img src="/assets/image/logo.jpg" alt="..." /></a>
+    <button
+      class="navbar-toggler bg-white"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            router-link="/products"
+            routerLinkActive="router-link-active"
+            href="/products"
+            >PRODUCTS</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="openCart()" role="button"
+            >CART ({{ items.length }})</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contactFooter">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
