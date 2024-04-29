@@ -16,13 +16,17 @@ export class CartHomeComponent implements OnInit {
     product: Product[] = [];
 //Product cart save
     items: ItemCart[] = [];
+//price total
+    total:number = 0;
 
     constructor(private service: ProductService) {
 
     }
     ngOnInit(): void {
         this.product = this.service.findAll();
-    }
+        this.items = JSON.parse(sessionStorage.getItem('cart')!/*usamos el operador para determinar que no sea vacio*/ ) || [];
+        this.calculateTotal()
+      }
 
     onAddCart(product: Product){
       const hasItem = this.items.find(item => {
@@ -41,5 +45,25 @@ export class CartHomeComponent implements OnInit {
       } else{
       this.items = [...this.items, {product : {...product}, quantity:1}];
       }
+      this.calculateTotal();
+      this.saveSession();
     }
+
+     deleteCart(id: string): void{
+        this.items = this.items.filter(item =>
+          item.product.id !== id
+        );
+        this.calculateTotal();
+        this.saveSession();
+     }
+      //reducir el flujo a un solo valor
+     calculateTotal():void{
+      this.total = this.items.reduce((priceTotal, item ) =>
+        priceTotal + item.quantity * item.product.price, 0);
+     }
+//Convertimos nuestro arreglo items en un string
+     saveSession(): void{
+      sessionStorage.setItem('cart', JSON.stringify(this.items))
+     }
+
 }

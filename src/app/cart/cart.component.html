@@ -8,6 +8,7 @@
       <th>CANTIDAD</th>
       <th>REFERENCIA</th>
       <th>TOTAL</th>
+      <th>ELIMINAR</th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +19,21 @@
       <td>{{ item.quantity }}</td>
       <td>{{ item.product.imagen }}</td>
       <td>{{ item.product.price * item.quantity }} TOTAL</td>
+      <td>
+        <button
+          class="btn btn-danger btn-sm"
+          (click)="deleteCart(item.product.id)"
+        >
+          Eliminar
+        </button>
+      </td>
     </tr>
     }
   </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4" class="text-end fw-bold">TOTAL</td>
+      <td colspan="1" class="text-start fw-bold">{{ total }}</td>
+    </tr>
+  </tfoot>
 </table>

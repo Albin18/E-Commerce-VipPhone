@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { CatalogComponent } from '../catalog/catalog.component';
@@ -11,15 +11,18 @@ import { ItemCart } from '../models/itemCart';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
-export class CartComponent  {
-
+export class CartComponent {
   product: Product[] = [];
 
-  constructor(private service: ProductService) {
-
-  }
+  constructor(private service: ProductService) {}
 
   // el arreglo de objetos donde se almacenara los productos del carrito para la compra
-     @Input() items: ItemCart[] = [];
+  @Input() items: ItemCart[] = [];
+  @Input() total = 0;
+
+  @Output() idProductEventEmitter = new EventEmitter();
+  deleteCart(id: string) {
+    this.idProductEventEmitter.emit(id);
+  }
 
 }

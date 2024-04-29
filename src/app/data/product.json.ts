@@ -8,7 +8,7 @@ export const productJSON : Product[] = [
     imagen: "/assets/image/Producto1.jpeg",
     categoria: {
       tipo: "tablet",
-      id: "tablets"
+
     },
     price: 54.99
   },
@@ -18,7 +18,7 @@ export const productJSON : Product[] = [
     imagen: "/assets/image/Producto2.jpeg",
     categoria:{
       tipo:"telefono",
-      id: "telefonos"
+
     },
     price:152.99
   },
@@ -28,7 +28,7 @@ export const productJSON : Product[] = [
     imagen: "/assets/image/Producto3.jpeg",
     categoria: {
       tipo: "Telefono",
-      id: "Tablets"
+
     },
     price: 54.99
   },
@@ -38,7 +38,7 @@ export const productJSON : Product[] = [
     imagen: "/assets/image/Producto4.jpeg",
     categoria: {
       tipo: "Telefono",
-      id: "Tablets"
+
     },
     price: 54.99
   },
@@ -48,7 +48,7 @@ export const productJSON : Product[] = [
     imagen: "/assets/image/Producto5.jpeg",
     categoria: {
       tipo: "Telefono",
-      id: "Tablets"
+
     },
     price: 54.99
   },
