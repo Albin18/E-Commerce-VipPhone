@@ -1,14 +1,11 @@
 <div class="row">
   @for(productLista of product; track $index){
-  <div class="lista col-3 my-2">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{ productLista.title }}</h5>
-        <p class="car-name">{{ productLista.id }}</p>
-        <img src="{{ productLista.imagen }}" />
-        <button class="btn btn-primary">Agregar al carrito</button>
-      </div>
-    </div>
+  <div class="col-4 my-2">
+    <app-product-cart
+      [productLista]="productLista"
+      (productEventEmitter)="onAddCart($event)"
+    >
+    </app-product-cart>
   </div>
   }
 </div>

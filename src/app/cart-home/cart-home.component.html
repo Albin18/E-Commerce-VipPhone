@@ -1,5 +1,8 @@
 <h2>CATALOGO DE PRODUCTOS APP!</h2>
-<app-catalog [product]="product"></app-catalog>
+<app-catalog
+  [product]="product"
+  (productEventEmitter)="onAddCart($event)"
+></app-catalog>
 <!--Si hay elementos en nuestro carros se muestra o si no muestra mensaje de error-->
 @if (items.length > 0) {
 <app-cart [items]="items"></app-cart>
