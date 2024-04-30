@@ -13,12 +13,12 @@ import { ItemCart } from '../models/itemCart';
 })
 export class CartComponent {
   product: Product[] = [];
-
+ @Input() items: ItemCart[] = [];
+  @Input() total = 0;
   constructor(private service: ProductService) {}
 
   // el arreglo de objetos donde se almacenara los productos del carrito para la compra
-  @Input() items: ItemCart[] = [];
-  @Input() total = 0;
+
 
   @Output() idProductEventEmitter = new EventEmitter();
   deleteCart(id: string) {

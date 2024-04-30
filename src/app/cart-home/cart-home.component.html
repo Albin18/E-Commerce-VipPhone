@@ -1,7 +1,6 @@
 <app-header [items]="items" (openEventEmitter)="openCart()"></app-header>
 <div class="container my-4">
   <h2>CATALOGO DE PRODUCTOS APP!</h2>
-  <button class="btn btn-info btn-sm">cart</button>
   <app-catalog
     [product]="product"
     (productEventEmitter)="onAddCart($event)"
