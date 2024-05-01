@@ -1,19 +1,6 @@
-<app-header [items]="items" (openEventEmitter)="openCart()"></app-header>
+<app-header [items]="items" [total]="total" [products]="product"></app-header>
+
 <div class="container my-4">
-  <h2>CATALOGO DE PRODUCTOS APP!</h2>
-  <app-catalog
-    [product]="product"
-    (productEventEmitter)="onAddCart($event)"
-  ></app-catalog>
-
-  @if (showCart) {
-
-  <app-cart-modal
-    [items]="items"
-    (idProductEventEmitter)="deleteCart($event)"
-    (openEventEmitter)="openCart()"
-  ></app-cart-modal>
-
-  }
+  <router-outlet></router-outlet>
 </div>
 <!--Si hay elementos en nuestro carros se muestra o si no muestra mensaje de error-->

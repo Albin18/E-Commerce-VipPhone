@@ -1,39 +1,47 @@
+<div class="card" style="display: block" tabindex="-1">
+  <div class="card-content my-2">
+    <div class="card-header">
+      <h5 class="card-title">CARRO DE COMPRAS!!!!</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>PRODUCTO</th>
+            <th>PRECIO</th>
+            <th>CANTIDAD</th>
+            <!-- <th>REFERENCIA</th>-->
+            <th>TOTAL</th>
+            <th>ELIMINAR</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of items; track $index) {
+          <tr>
+            <td>{{ item.product.title }}</td>
+            <td>{{ item.product.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <!--<td>{{ item.product.imagen }}</td>-->
+            <td>{{ item.product.price * item.quantity }}</td>
+            <td>
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="deleteCart(item.product.id)"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" class="text-end fw-bold">TOTAL</td>
+            <td colspan="1" class="text-start fw-bold">{{ total }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
 <h2>CART COMPONENT HTML!!!!</h2>
-
-<table class="table table-hover table-striped">
-  <thead>
-    <tr>
-      <th>PRODUCTO</th>
-      <th>PRECIO</th>
-      <th>CANTIDAD</th>
-      <!-- <th>REFERENCIA</th>-->
-      <th>TOTAL</th>
-      <th>ELIMINAR</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (item of items; track $index) {
-    <tr>
-      <td>{{ item.product.title }}</td>
-      <td>{{ item.product.price }}</td>
-      <td>{{ item.quantity }}</td>
-      <!--<td>{{ item.product.imagen }}</td>-->
-      <td>{{ item.product.price * item.quantity }}</td>
-      <td>
-        <button
-          class="btn btn-danger btn-sm"
-          (click)="deleteCart(item.product.id)"
-        >
-          Eliminar
-        </button>
-      </td>
-    </tr>
-    }
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="4" class="text-end fw-bold">TOTAL</td>
-      <td colspan="1" class="text-start fw-bold">{{ total }}</td>
-    </tr>
-  </tfoot>
-</table>

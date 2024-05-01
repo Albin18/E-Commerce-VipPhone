@@ -19,15 +19,19 @@
         </li>
         <li class="nav-item">
           <a
+            [routerLink]="['/catalog']"
+            [state]="{ products: products }"
             class="nav-link"
-            router-link="/products"
-            routerLinkActive="router-link-active"
-            href="/products"
+            role="button"
             >PRODUCTS</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="openCart()" role="button"
+          <a
+            [routerLink]="['/cart']"
+            [state]="{ items: items, total: total }"
+            class="nav-link"
+            role="button"
             >CART ({{ items.length }})</a
           >
         </li>

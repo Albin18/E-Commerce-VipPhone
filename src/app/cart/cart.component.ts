@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { ProductService } from '../services/product.service';
-import { Product } from '../models/product';
+import { Component, EventEmitter} from '@angular/core';
 import { CatalogComponent } from '../catalog/catalog.component';
 import { ItemCart } from '../models/itemCart';
+import { Router } from '@angular/router';
+import { SharingDataService } from '../services/sharing-data.service';
 
 @Component({
   selector: 'app-cart',
@@ -11,34 +11,22 @@ import { ItemCart } from '../models/itemCart';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
-export class CartComponent implements OnChanges{
-  product: Product[] = [];
-  @Input() items: ItemCart[] = [];
+export class CartComponent {
+
+  items: ItemCart[] = [];
+
    total = 0;
-  constructor(private service: ProductService) {}
+
+   constructor(private sharingDataService: SharingDataService, private router: Router) {
+      this.items = this.router.getCurrentNavigation()?.extras.state!['items'];
+      this.total = this.router.getCurrentNavigation()?.extras.state!['total'];
+   }
 
   // el arreglo de objetos donde se almacenara los productos del carrito para la compra
 
-  ngOnChanges(change: SimpleChanges): void {
-   let itemChange = change['items'];
-   this.calculateTotal();
-   this.saveSession();
-  }
-
-  @Output() idProductEventEmitter = new EventEmitter();
   deleteCart(id: string) {
-    this.idProductEventEmitter.emit(id);
+    this.sharingDataService.idProductEventEmitter.emit(id);
   }
 
-  calculateTotal(): void {
-    this.total = this.items.reduce(
-      (priceTotal, item) => priceTotal + item.quantity * item.product.price,
-      0
-    );
-  }
-  //Convertimos nuestro arreglo items en un string
-  saveSession(): void {
-    sessionStorage.setItem('cart', JSON.stringify(this.items));
-  }
 
 }
