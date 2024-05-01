@@ -13,12 +13,13 @@ export class CartModalComponent {
 
   showCart: boolean = false;
   @Input() items: ItemCart[] = [];
-  @Input() total = 0;
+  //@Input() total = 0;
 
   @Output() idProductEventEmitter = new EventEmitter();
   deleteCart(id: string) {
     this.idProductEventEmitter.emit(id);
   }
+
   @Output() openEventEmitter = new EventEmitter();
   openCart(): void {
     this.openEventEmitter.emit();
