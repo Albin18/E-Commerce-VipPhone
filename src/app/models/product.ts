@@ -4,4 +4,5 @@ export class Product {
   price: number = 0;
   imagen: string = ""
   categoria: any = "";
+  details: any ="";
 }
