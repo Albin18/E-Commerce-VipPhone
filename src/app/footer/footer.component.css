@@ -7,14 +7,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, auto));
 }
-.contact-info h4{
-  color:cadetblue ;
-  font-size:15px ;
+.contact-info h3{
+  color: rgb(255, 230, 0);
+  font-size:25px ;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 .contact-info p{
-  color: blue;
+  color: white;
   font-size: 15px;
   font-weight: 400;
   text-transform: capitalize;
@@ -24,7 +24,7 @@
   transition: all .42s;
 }
 .contact-info p:hover{
-  color: red;
+  color: rgb(255, 230, 0);
 }
 .first-info img{
   width: 150px;
@@ -33,7 +33,7 @@
 .social-icon i{
   color: #fff;
   margin-right: 10px;
-  font-size: 20px;
+  font-size: 30px;
   transition: all .42s;
 }
 .social-icon i:hover{
