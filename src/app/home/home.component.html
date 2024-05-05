@@ -6,19 +6,22 @@
       Collection 2024
     </h1>
     <p>Theres nothing like trend</p>
-    <a href="#" class="main-btn">Shop Now</a>
+    <a
+      [routerLink]="['/cart']"
+      [state]="{ items: items, total: total }"
+      class="main-btn"
+      >Shop Now</a
+    >
   </div>
   <div class="down-arrow">
-    <a href="#trending" class="down"><i class="bx bx-down-arrow-alt"></i></a>
+    <img src="/assets/image/Producto2.jpeg" alt="" />
   </div>
 </section>
 
 <section class="trending-product" id="trending">
-  <div class="center-text">
+  <!--<div class="center-text">
     <h2>Our Trending <span>Products</span></h2>
-  </div>
-
-  <div id="cont-productossssss" class="products"></div>
+  </div> -->
 </section>
 
 <!--NOVEDADES-->
@@ -27,7 +30,6 @@
   <div class="up-center-text">
     <h2>NEW UPDATES</h2>
   </div>
-
   <div class="update-cart">
     <div class="cart">
       <img src="/assets/image/Producto2.jpeg" alt="" />
