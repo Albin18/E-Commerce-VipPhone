@@ -1,3 +1,6 @@
+*{
+  background-color: rgb(231, 231, 231);
+}
 .row{
   position: relative;
   transition: all .40s;
@@ -25,30 +28,6 @@
 .row button{
   max-width: 90%;
   max-height: 60px;
-}
-.product-text h5{
-  position: absolute;
-  top: 20px;
-  left: 25px;
-  color: #fff;
-  font-size: 12px;
-  text-transform: uppercase;
-  background-color:green ;
-  padding: 3px 10px;
-  border-radius: 2px;
+  background-color: gray;
 }
 
-.price{
-  align-items: center;
-}
-.price h4{
-  color: #111;
-  font-size: 16px;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-.price p{
-  color: #151515;
-  font-size: 14px;
-  font-weight: 600;
-}
