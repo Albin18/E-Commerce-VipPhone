@@ -10,6 +10,10 @@
   display: flex;
   justify-content: center;
 }
+.card-details{
+  display: flex;
+  justify-content: center;
+}
 .row img{
   width: auto;
   height: 400px;

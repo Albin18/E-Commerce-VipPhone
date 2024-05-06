@@ -1,7 +1,7 @@
 <div class="card mx-5 my-2">
   <div class="row">
     <h5 class="card-title">{{ productLista.title }}</h5>
-    <p class="car-name">{{ productLista.details }}</p>
+    <p class="card-details">{{ productLista.details }}</p>
     <img src="{{ productLista.imagen }}" />
     <button class="btn btn-primary" (click)="onAddCart(productLista)">
       Agregar al carrito ${{ productLista.price }}

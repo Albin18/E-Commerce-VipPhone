@@ -11,7 +11,6 @@
             <th>PRODUCTO</th>
             <th>PRECIO</th>
             <th>CANTIDAD</th>
-            <!-- <th>REFERENCIA</th>-->
             <th>TOTAL</th>
             <th>ELIMINAR</th>
           </tr>
@@ -19,7 +18,7 @@
         <tbody>
           @for (item of items; track $index) {
           <tr>
-            <td>{{ item.product.title }}</td>
+            <td><img class="img-cart" src="{{ item.product.imagen }}" /></td>
             <td>$ {{ item.product.price }}</td>
             <td>{{ item.quantity }}</td>
             <!--<td>{{ item.product.imagen }}</td>-->
@@ -48,4 +47,3 @@
     </div>
   </div>
 </div>
-<h2>CART COMPONENT HTML!!!!</h2>

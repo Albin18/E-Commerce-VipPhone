@@ -58,9 +58,6 @@ export class CartHomeComponent implements OnInit {
       }
       this.calculateTotal();
       this.saveSession();
-      this.router.navigate(['/cart'], {
-        state: { items: this.items, total: this.total },
-      });
 
       Swal.fire({
         title: 'Agregado a tu Carrito',
