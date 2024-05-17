@@ -1,9 +1,10 @@
 .contact{
   background-color: black;
   color: #fff;
+  margin: 10% 0 0 0;
 }
 .contact-info{
-  padding: 50px;
+  padding: 50px 10px 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, auto));
 }
@@ -47,5 +48,5 @@
 .copyright p{
   color: #fff;
   text-transform: capitalize;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
