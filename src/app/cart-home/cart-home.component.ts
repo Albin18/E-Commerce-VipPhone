@@ -70,13 +70,13 @@ export class CartHomeComponent implements OnInit {
   deleteCart(): void {
     this.sharingDataService.idProductEventEmitter.subscribe((id) => {
       Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Desea eliminarlo?',
+        text: "Esta accion no es reversible!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
+        confirmButtonText: 'Si, eliminar!',
       }).then((result) => {
         if (result.isConfirmed) {
           this.items = this.items.filter((item) => item.product.id !== id);
@@ -93,8 +93,8 @@ export class CartHomeComponent implements OnInit {
             });
           });
           Swal.fire({
-            title: 'Deleted!',
-            text: 'Your file has been deleted.',
+            title: 'Eliminado!',
+            text: 'El producto fue eliminado.',
             icon: 'success',
           });
         }
