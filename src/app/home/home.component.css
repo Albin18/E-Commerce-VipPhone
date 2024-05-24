@@ -14,7 +14,7 @@ padding: 5% 10%;
 }
 .main-text{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   gap: 10rem
 }
 
@@ -78,14 +78,14 @@ margin-bottom: 20px;
   margin-bottom: 30px;
 }
 .cart img{
-  width: auto;
-  height: 400px;
+  width: 80%;
+  height: auto;
   border-radius: 5px;
   box-shadow: 0 0 4rem #333c56;
 }
 .update-cart{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   gap: 1rem
 }
 .cart h5{

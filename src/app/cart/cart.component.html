@@ -5,50 +5,52 @@
     </div>
     <div class="card-body">
       @if(items.length > 0) {
-      <table class="table table-hover table-striped">
-        <thead>
-          <tr>
-            <th>PRODUCTO</th>
-            <th>PRECIO</th>
-            <th>CANTIDAD</th>
-            <th>TOTAL</th>
-            <th>ELIMINAR</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (item of items; track $index) {
-          <tr>
-            <td><img class="img-cart" src="{{ item.product.imagen }}" /></td>
-            <td>$ {{ item.product.price }}</td>
-            <td>{{ item.quantity }}</td>
-            <!--<td>{{ item.product.imagen }}</td>-->
-            <td>$ {{ item.product.price * item.quantity }}</td>
-            <td>
-              <button
-                class="btn btn-danger btn-sm"
-                (click)="deleteCart(item.product.id)"
-              >
-                Eliminar
-              </button>
-            </td>
-          </tr>
-          }
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="1">
-              <a
-                class="btn btn-success"
-                role="button"
-                href="https://api.whatsapp.com/send/?phone=584128478470&text&type=phone_number&app_absent=0"
-                >COMPRAR</a
-              >
-            </td>
-            <td colspan="3" class="text-end fw-bold">TOTAL</td>
-            <td colspan="1" class="text-start fw-bold">$ {{ total }}</td>
-          </tr>
-        </tfoot>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>PRODUCTO</th>
+              <th>PRECIO</th>
+              <th>CANTIDAD</th>
+              <th>TOTAL</th>
+              <th>ELIMINAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of items; track $index) {
+            <tr>
+              <td><img class="img-cart" src="{{ item.product.imagen }}" /></td>
+              <td>$ {{ item.product.price }}</td>
+              <td>{{ item.quantity }}</td>
+              <!--<td>{{ item.product.imagen }}</td>-->
+              <td>$ {{ item.product.price * item.quantity }}</td>
+              <td>
+                <button
+                  class="btn btn-danger btn-sm"
+                  (click)="deleteCart(item.product.id)"
+                >
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="1">
+                <a
+                  class="btn btn-success"
+                  role="button"
+                  href="https://api.whatsapp.com/send/?phone=584128478470&text&type=phone_number&app_absent=0"
+                  >COMPRAR</a
+                >
+              </td>
+              <td colspan="3" class="text-end fw-bold">TOTAL</td>
+              <td colspan="1" class="text-start fw-bold">$ {{ total }}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
       } @else {
       <div class="alert alert-warning">TU CARRITO DE PRODUCTOS ESTA VACIO</div>
       }
